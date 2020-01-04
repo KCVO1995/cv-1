@@ -135,7 +135,7 @@ let step = () => {
         if (n+1 < s.length){
             step()
         }
-    }, 50);
+    }, 150);
 }
 
 step()

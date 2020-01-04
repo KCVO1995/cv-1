@@ -139,7 +139,7 @@ var step = function step() {
     if (n + 1 < s.length) {
       step();
     }
-  }, 50);
+  }, 150);
 };
 
 step(); //demo.innerHTML = s.substring(0, n)
