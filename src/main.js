@@ -46,6 +46,18 @@ let s =
     background-color: #fff;
     border-radius: 50%;
     background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
+}
+/* 最后我们来个大回旋 */
+#div1{
+    animation: goRotate 3s linear infinite;
+}
+@keyframes goRotate{
+    from{
+        transform: translateX(50%) rotate(0deg)
+    }
+    to{
+        transform: translateX(50%) rotate(360deg)
+    }
 }`
 
 let step = () => {

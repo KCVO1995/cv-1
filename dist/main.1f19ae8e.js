@@ -122,7 +122,7 @@ var html = document.getElementById('html');
 var style = document.querySelector('#style');
 var n = 0;
 var s2 = '';
-var s = "/*\u4F60\u597D\uFF0C\u6211\u53EB\u5C0F\u8F89\n* \u63A5\u4E0B\u6765\u6211\u6F14\u793A\u4E00\u4E0B\u6211\u7684\u524D\u7AEF\u529F\u5E95\n* \u9996\u5148\u6211\u8981\u51C6\u5907\u4E00\u4E2Adiv*/\n#div1{\n    border: 1px solid red;\n    width: 400px;\n    height: 400px;\n}\n/* \u63A5\u4E0B\u6765\u6211\u628A div \u53D8\u6210\u4E00\u4E2A\u516B\u5366\u56FE\n* \u6CE8\u610F\u770B\u597D\u4E86\n* \u9996\u5148\uFF0C\u628A div \u53D8\u6210\u4E00\u4E2A\u5706\n*/ \n#div1{\n    border-radius: 50%;\n    box-shadow: 0 0 3px rgba(0,0,0,0.5);\n    border: none;\n}\n/* \u516B\u5366\u662F\u9634\u9633\u5F62\u6210\u7684\n* \u4E00\u9ED1\u4E00\u767D\n*/\n#div1{\n    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);\n}\n/* \u52A0\u4E24\u4E2A\u4E7E\u5764\u7403 */\n#div1::before{\n    width: 200px;\n    height: 200px;\n    top: 0;\n    left: 50%;\n    transform: translateX(-50%);\n    background-color: #000;\n    border-radius: 50%; \n    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%);\n}\n#div1::after{\n    width: 200px;\n    height: 200px;\n    top: 50%;\n    left: 50%;\n    transform: translateX(-50%);\n    background-color: #fff;\n    border-radius: 50%;\n    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);\n}";
+var s = "/*\u4F60\u597D\uFF0C\u6211\u53EB\u5C0F\u8F89\n* \u63A5\u4E0B\u6765\u6211\u6F14\u793A\u4E00\u4E0B\u6211\u7684\u524D\u7AEF\u529F\u5E95\n* \u9996\u5148\u6211\u8981\u51C6\u5907\u4E00\u4E2Adiv*/\n#div1{\n    border: 1px solid red;\n    width: 400px;\n    height: 400px;\n}\n/* \u63A5\u4E0B\u6765\u6211\u628A div \u53D8\u6210\u4E00\u4E2A\u516B\u5366\u56FE\n* \u6CE8\u610F\u770B\u597D\u4E86\n* \u9996\u5148\uFF0C\u628A div \u53D8\u6210\u4E00\u4E2A\u5706\n*/ \n#div1{\n    border-radius: 50%;\n    box-shadow: 0 0 3px rgba(0,0,0,0.5);\n    border: none;\n}\n/* \u516B\u5366\u662F\u9634\u9633\u5F62\u6210\u7684\n* \u4E00\u9ED1\u4E00\u767D\n*/\n#div1{\n    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);\n}\n/* \u52A0\u4E24\u4E2A\u4E7E\u5764\u7403 */\n#div1::before{\n    width: 200px;\n    height: 200px;\n    top: 0;\n    left: 50%;\n    transform: translateX(-50%);\n    background-color: #000;\n    border-radius: 50%; \n    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%);\n}\n#div1::after{\n    width: 200px;\n    height: 200px;\n    top: 50%;\n    left: 50%;\n    transform: translateX(-50%);\n    background-color: #fff;\n    border-radius: 50%;\n    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);\n}\n/* \u6700\u540E\u6211\u4EEC\u6765\u4E2A\u5927\u56DE\u65CB */\n#div1{\n    animation: goRotate 3s linear infinite;\n}\n@keyframes goRotate{\n    from{\n        transform: translateX(50%) rotate(0deg)\n    }\n    to{\n        transform: translateX(50%) rotate(360deg)\n    }\n}";
 
 var step = function step() {
   setTimeout(function () {
@@ -138,7 +138,7 @@ var step = function step() {
       n = n + 1;
       step();
     }
-  }, 5);
+  }, 50);
 };
 
 step(); //demo.innerHTML = s.substring(0, n)
@@ -170,7 +170,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "12715" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "14670" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
