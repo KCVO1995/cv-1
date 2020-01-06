@@ -1,141 +1,69 @@
-let demo = document.getElementById('demo')
-let n = -1
+let html = document.getElementById('html')
+let style = document.querySelector('#style')
+let n = 0
 let s2 = ''
 let s = 
-`你用眼角的娇羞
-
-钩起我多少温柔
-
-掬起你明媚的笑
-
-来洗我千般忧愁
-
-却牵来长长思念
-
-萦绕在你我心头
-
-相思啊
-
-你为什么如此繁茂
-
-你的繁茂
-
-来自我的消瘦
-
-女郎啊
-
-你为什么如此美丽
-
-你的美丽
-
-来自我的憔悴
-
-我已习惯
-
-用别人的罪恶
-
-来惩罚自己
-
-我的笔
-
-常常吸满悲愤
-
-纸上有血
-
-泪在字里
-
-那么一次偶然和必然
-
-改写了我
-
-用你的温情喂我的笔
-
-让我的笔下
-
-有了阳光雨露
-
-有了笑靥鲜花
-
-我在黑夜中
-
-也找到了诗意
-
-这或许是另一种悲哀
-
-但是我愿意
-
-有些风景只能远远地看
-
-走近了就丢失了梦
-
-有些河流不要急于涉过去
-
-涉过去就没有了传奇
-
-我们之间的河流
-
-唱的都是我的诗
-
-旁人啊
-
-不要对我说
-
-男人膝下有黄金
-
-我天生傲骨
-
-从不谄媚权贵
-
-不为五斗米折腰
-
-我拜倒在您的脚下
-
-是因为美神的石榴裙
-
-有来自仙界的芬芳
-
-能荡除我
-
-在人间沾染的浊气
-
-不要问我
-
-情为何物
-
-你问我
-
-我问谁呢
-
-我只知道
-
-爱你
-
-是我此生
-
-难以逃脱的宿命
-
-我在塑造你的同时
-
-被你塑造着
-
-想你
-
-是一种激情
-
-更是一种习惯`
- 
+`/*你好，我加小辉
+* 接下来我演示一下我的前端功底
+* 首先我要准备一个div*/
+#div1{
+    border: 1px solid red;
+    width: 400px;
+    height: 400px;
+}
+/* 接下来我把 div 变成一个八卦图
+* 注意看好了
+* 首先，把 div 变成一个圆
+*/ 
+#div1{
+    border-radius: 50%;
+    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    border: none;
+}
+/* 八卦是阴阳形成的
+* 一黑一白
+*/
+#div1{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+}
+/* 加两个乾坤球 */
+#div1::before{
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    border-radius: 50%; 
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%);
+}
+#div1::after{
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, rgba(255,255,255,1) 25%, rgba(255,255,255,1) 100%);
+}`
 
 let step = () => {
     setTimeout(() => {
-        n = n + 1
-        console.log(s2)
-        if (s[n] === '\n') { s2 += '<br>'}
-        else { s2 += s[n]}
-        demo.innerHTML = s2
+        //如果是回车，换成<br>
+        //如果是空格，换成&nbsp;
+        s[n] === '\n' ? s2 += '<br>' :
+        s[n] === ' ' ? s2 += '&nbsp;' :
+        s2 += s[n]
+        html.innerHTML = s2
+        style.innerHTML = s.substring(0, n+1)
+        window.scrollTo(0, 8000)
+        html.scrollTo(0, 8000)
         if (n+1 < s.length){
+            n = n + 1
             step()
         }
-    }, 150);
+    }, 50);
 }
 
 step()
