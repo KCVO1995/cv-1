@@ -3,7 +3,7 @@ let style = document.querySelector('#style')
 let n = 0
 let s2 = ''
 let s = 
-`/*你好，我加小辉
+`/*你好，我叫小辉
 * 接下来我演示一下我的前端功底
 * 首先我要准备一个div*/
 #div1{
@@ -63,7 +63,7 @@ let step = () => {
             n = n + 1
             step()
         }
-    }, 50);
+    }, 5);
 }
 
 step()
