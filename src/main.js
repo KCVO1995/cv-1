@@ -8,8 +8,8 @@ let s =
 * 首先我要准备一个div*/
 #div1{
     border: 1px solid red;
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
 }
 /* 接下来我把 div 变成一个八卦图
 * 注意看好了
@@ -28,8 +28,8 @@ let s =
 }
 /* 加两个乾坤球 */
 #div1::before{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -62,12 +62,13 @@ let s =
 
 let step = () => {
     setTimeout(() => {
+        //使用<pre>可以省略判断
         //如果是回车，换成<br>
         //如果是空格，换成&nbsp;
-        s[n] === '\n' ? s2 += '<br>' :
-        s[n] === ' ' ? s2 += '&nbsp;' :
-        s2 += s[n]
-        html.innerHTML = s2
+        //s[n] === '\n' ? s2 += '<br>' :
+        //s[n] === ' ' ? s2 += '&nbsp;' :
+        //s2 += s[n]
+        html.innerHTML = s.substring(0, n+1)
         style.innerHTML = s.substring(0, n+1)
         window.scrollTo(0, 8000)
         html.scrollTo(0, 8000)
