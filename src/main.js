@@ -38,8 +38,8 @@ let s =
     background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 25%, rgba(0,0,0,1) 25%, rgba(0,0,0,1) 100%);
 }
 #div1::after{
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     top: 50%;
     left: 50%;
     transform: translateX(-50%);
